@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Wish Scheduler 🎂</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Birthday Wish Scheduler 🎉</h1>
+    <p>Apne friend ke liye future me auto birthday wishes schedule karo!</p>
+    
+    <form id="wishForm">
+      <input type="text" id="friendName" placeholder="Friend's Name" required />
+      <input type="tel" id="phone" placeholder="Mobile Number" required />
+      <input type="datetime-local" id="sendTime" required />
+      <textarea id="message" placeholder="Your Message..." required></textarea>
+      <button type="submit">Schedule Wish</button>
+    </form>
+
+    <div id="output" class="output"></div>
+
+    <!-- WhatsApp Send Button -->
+    <div class="whatsapp-container">
+      <h3>🎁 WhatsApp Wish Send Karne Ke Liye</h3>
+      <a href="https://wa.me/919876543210?text=🎉%20Happy%20Birthday%20Rahul%20%F0%9F%8E%89%0ATera%20din%20bohot%20mast%20ho%20%E2%9D%A4%EF%B8%8F%0AFrom%20Vikash" 
+         target="_blank">
+        <button class="whatsapp-btn">Send WhatsApp Wish 🎂</button>
+      </a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
