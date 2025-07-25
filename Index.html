@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Wish Scheduler 🎂</title>
+  <style>
+      body {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 20px #fff;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+button {
+  background: #00c6ff;
+  padding: 12px 20px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0072ff;
+}
+
+.output {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.whatsapp-container {
+  margin-top: 20px;
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Birthday Wish Scheduler 🎉</h1>
+    <p>Apne friend ke liye future me auto birthday wishes schedule karo!</p>
+    
+    <form id="wishForm">
+      <input type="text" id="friendName" placeholder="Friend's Name" required />
+      <input type="tel" id="phone" placeholder="Mobile Number" required />
+      <input type="datetime-local" id="sendTime" required />
+      <textarea id="message" placeholder="Your Message..." required></textarea>
+      <button type="submit">Schedule Wish</button>
+    </form>
+
+    <div id="output" class="output"></div>
+
+    <!-- WhatsApp Send Button -->
+    <div class="whatsapp-container">
+      <h3>🎁 WhatsApp Wish Send Karne Ke Liye</h3>
+      <a href="https://wa.me/919876543210?text=🎉%20Happy%20Birthday%20Rahul%20%F0%9F%8E%89%0ATera%20din%20bohot%20mast%20ho%20%E2%9D%A4%EF%B8%8F%0AFrom%20Vikash" 
+         target="_blank">
+        <button class="whatsapp-btn">Send WhatsApp Wish 🎂</button>
+      </a>
+    </div>
+  </div>
+
+  <script>document.getElementById('wishForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('friendName').value;
+  const phone = document.getElementById('phone').value;
+  const time = document.getElementById('sendTime').value;
+  const msg = document.getElementById('message').value;
+
+  document.getElementById('output').innerHTML = `
+    ✅ <b>${name}</b> ke liye birthday wish schedule ho gaya hai! <br/>
+    📱 Mobile: ${phone} <br/>
+    🕒 Time: ${new Date(time).toLocaleString()} <br/>
+    💌 Message: "${msg}"
+    <br/><br/>
+    <i>(Note: Actual SMS bhejne ke liye backend + SMS API jodni hogi)</i>
+  `;
+});</script>
+</body>
+</html>
